@@ -1,0 +1,4 @@
+alt + shift + down arrow = copy down the same line
+ctrl + d = select multiples
+alt + up arrow/down arrow = move the line up or down
+alt + tab = switch windows
