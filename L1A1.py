@@ -1,1 +1,21 @@
-print("anything")
+file=open("sample.txt","r")
+data=file.read()
+print(data)
+file.close()
+
+file=open("sample.txt" , "w")
+file.write("this is the changed version")
+file.close()
+file=open("sample.txt" , "r")
+data=file.read()
+print(data)
+file.close()
+
+
+file=open("sample.txt" , "a")
+file.write("\nhello my name is harika ")
+file.close()
+file=open("sample.txt" , "r")
+text=file.read()
+print(text)
+file.close()

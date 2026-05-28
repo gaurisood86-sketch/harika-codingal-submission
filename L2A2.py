@@ -1,14 +1,12 @@
+with open ("sample.txt" , "r") as file:
+    print("reading part of the line")
+    print(file.read(10))
 
-number1 = input("Enter Value of number1:")
-number2 = input("Enter Value of number2:")
-number3 = input("Enter Value of number3:")
-pen=number1
-pencil=number3
-number1 = number2
-number2 = pencil
-number3 = pen
+with open ("sample.txt" , "r") as file:
+    print("reading one single line")
+    print(file.readline())
 
-
-print("value of number1 after swapping", number1)
-print("value of number2 after swapping", number2)
-print("value of number3 after swapping", number3)
+with open ("sample.txt" , "r") as file:
+    print("looping through file lines")
+    for line in file:
+        print(line.strip())
