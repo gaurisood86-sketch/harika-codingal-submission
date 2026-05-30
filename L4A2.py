@@ -1,24 +1,23 @@
+from tkinter import *
+root=Tk()
+root.title("Grid Example")
 
-for i in range(1, 11):
-    print(f"23 x {i} = {23 * i}")
+def hello():
+    print("Hello , your form has been sumbitted.")
 
+label1=Label(root ,  text="Username:")
+label1.grid(row=0 , column=0 , padx=5 , pady=5)
 
-total_sum = 0
-num = 1
-while num <= 10:
-    total_sum += num
-    num += 1
-print(f"The sum of the first ten natural numbers is {total_sum}")
+entry1=Entry(root)
+entry1.grid(row=0 , column=1 , padx=5 , pady=5)
 
+label2=Label(root , text="Password:")
+label2.grid(row=1 , column=0 , padx=5 , pady=5)
 
+entry2=Entry(root , show="*")
+entry2.grid(row=1 , column=1 , padx=5 , pady=5)
 
-num = int(input("Enter a number: "))
-if num > 1:
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            print(f"{num} is not a prime number.")
-            break
-    else:
-        print(f"{num} is a prime number.")
-else:
-    print(f"{num} is not a prime number.")
+button=Button(root , text="Login:" , command=hello)
+button.grid(row=2 , column=0 , columnspan=2 , pady=10)
+
+root.mainloop()

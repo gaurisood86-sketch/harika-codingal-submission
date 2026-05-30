@@ -1,15 +1,18 @@
+from tkinter import *
+root=Tk()
+root.title("form sumbmission")
+root.geometry("200x300")
+root.configure(bg="lavender")
 
-num = int(input("Enter a number: "))
-num_str = str(num)
-num_digits = len(num_str)
-armstrong_sum = 0
-x = num
-while x > 0:
-    digit = x % 10            
-    armstrong_sum += digit ** num_digits  
-    x //= 10                
+def data():
+    print("Data was sumbitted.")
 
-if num == armstrong_sum:
-    print(f"{num} is an armstrong number")
-else:
-    print(f"{num} is not an armstrong number")
+label=Label(root , text="Welcome to tkinter" , font=("arial", 12))
+entry=Entry(root , width=20)
+button=Button(root , text="sumbit" , command=data)
+
+label.grid(row=0,column=0,columnspan=2,pady=5)
+entry.grid(row=1,column=0,padx=5,pady=5)
+button.grid(row=2,column=1,padx=5,pady=5)
+
+root.mainloop()
