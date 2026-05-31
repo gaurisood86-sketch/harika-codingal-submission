@@ -1,38 +1,94 @@
-import turtle
-pen=turtle.Turtle()
-pen.speed(2)
-pen.color("red")
-pen.fillcolor("blue")
-pen.begin_fill()
+from tkinter import *
+from tkinter import messagebox
+from PIL import Image , ImageTk
 
-for i in range(4):
-   pen.forward(100)
-   pen.right(90)
+root=Tk()
+root.title("Calculator")
+root.geometry("640x400")
+root.configure(bg="lightblue")
 
-pen.end_fill()
-turtle.done()
+upload=Image.open("yes-bank.jpg")
+image=ImageTk.PhotoImage(upload)
+label=Label(root , Image=image , bg="lightblue")
+label.place(x=180 , y=20)
+
+label1=Label(root,
+    text="Hey! User welcome to denomination counter application",
+    bg="brown")
+label1.place(relx=0.5 , y=20 , anchor=CENTER)
+
+def show_msg():
+    msgbox=messagebox.showinfo(
+        "ALERT!", "DO YOU WANT TO CALCULATE DENOMINATION COUNT?")
+    if msgbox == 'ok:':
+        topwin()
 
 
-import turtle
-pen=turtle.Turtle()
-number_of_sides=8
-side_length=60
+def topwin():
+    top = Toplevel()
+    top.title("Denominations Calculator")
+    top.configure(bg='light grey')
+    top.geometry('600x350+50+50')
 
-for i in range(number_of_sides):
-   pen.forward(side_length)
-   pen.right(360/number_of_sides)
-turtle.done()
+    label = Label(top, text="Enter total amount", bg='light grey')
+    entry = Entry(top)
+    lbl = Label(top, text="Here are number of notes for each denomination", bg='light grey')
 
-import turtle
-pen=turtle.Turtle()
+    l1 = Label(top, text="2000", bg='light grey')
+    l2 = Label(top, text="500", bg='light grey')
+    l3 = Label(top, text="100", bg='light grey')
 
-for i in range(5):
-   pen.forward(150)
-   pen.right(144)
-turtle.done()
+    t1 = Entry(top)
+    t2 = Entry(top)
+    t3 = Entry(top)
 
-import turtle
-pen=turtle.Turtle()
+    def calculator():
+        try:
+            global amount
+            amount = int(entry.get())
+            note2000 = amount // 2000
+            amount %= 2000
+            note500 = amount // 500
+            amount %= 500
+            note100 = amount // 100
 
-pen.circle(100)
-turtle.done()
+            t1.delete(0, END)
+            t2.delete(0, END)
+            t3.delete(0, END)
+
+            t1.insert(END, str(note2000))
+            t2.insert(END, str(note500))
+            t3.insert(END, str(note100))
+        except ValueError:
+            messagebox.showerror("Error", "Please enter a valid number.")
+
+    btn = Button(top, text='Calculate', command=calculator, bg='brown', fg='white')
+
+    label.place(x=230, y=50)
+    entry.place(x=200, y=80)
+    btn.place(x=240, y=120)
+    lbl.place(x=140, y=170)
+
+    l1.place(x=180, y=200)
+    l2.place(x=180, y=230)
+    l3.place(x=180, y=260)
+
+    t1.place(x=270, y=200)
+    t2.place(x=270, y=230)
+    t3.place(x=270, y=260)
+
+    top.mainloop()
+
+root.mainloop()
+           
+
+
+
+
+
+    
+             
+             
+             
+
+
