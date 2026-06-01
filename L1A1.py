@@ -1,21 +1,16 @@
-file=open("sample.txt","r")
-data=file.read()
-print(data)
-file.close()
+import pygame
 
-file=open("sample.txt" , "w")
-file.write("this is the changed version")
-file.close()
-file=open("sample.txt" , "r")
-data=file.read()
-print(data)
-file.close()
+pygame.init()
+
+screen=pygame.display.set_mode((400,500))
+
+done=False
+
+while not done:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            pygame.quit()
+
+    pygame.display.flip()
 
 
-file=open("sample.txt" , "a")
-file.write("\nhello my name is harika ")
-file.close()
-file=open("sample.txt" , "r")
-text=file.read()
-print(text)
-file.close()
