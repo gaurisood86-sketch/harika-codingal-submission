@@ -1,29 +1,20 @@
-with open ("sample.txt") as file:
-    print(file.read (5))
-    print(file.tell())
-    print(file.read(5))
-    print(file.tell())
+import pygame
 
-with open ("sample.txt" , "r") as file:
-    print(file.read(10))
+pygame.init()
+window=pygame.display.set_mode((400,400))
+window.fill((255 , 255 , 255))
+Green=((0 , 255 , 0))
 
-with open ("sample.txt" , "r") as file:
-    line=file.readline()
-    print(line)
+pygame.draw.circle(window,Green,(300,300),50)
+pygame.draw.circle(window,Green,(100,100),50,3)
+pygame.display.update()
 
-with open ("sample.txt","r") as file:
-    print(file.readline())
-    print(file.readline())
-    print(file.readline())
+running=True
 
-with open ("sample.txt" , "r") as file:
-    lines=file.readlines()
-    print(lines)
+while running:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            running=False
+pygame.quit()   
 
-with open ("sample.txt") as file:
-    for line in file:
-     print(line)
-
-with open ("sample.txt" , "r") as file:
-    for line in file.readlines():
-        print(line.strip())
+    

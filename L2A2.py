@@ -4,7 +4,7 @@ def main():
     pygame.init()
     screen_width,screen_height=500,500
     screen=pygame.display.set_mode((screen_width, screen_height))
-    screen=pygame.display.set_caption("changing the color ! ")
+    pygame.display.set_caption("changing the color ! ")
 
     colors={
      'red':pygame.Color('red'),
@@ -44,7 +44,7 @@ def main():
          current_color=colors['white']
 
 
-        screen.fill((255,255,255))
+        screen.fill((0,0,0))
 
         pygame.draw.rect(screen, current_color,
                          (x, y, sprite_width, sprite_height))
