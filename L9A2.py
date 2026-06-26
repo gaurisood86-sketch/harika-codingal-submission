@@ -1,25 +1,14 @@
-class amount:
-    def __init__ (self , bal , acc):
-        self.balence=bal
-        self.account_no=acc
+from tkinter import *
+from tkinter import messagebox
 
-    def debit (self , amount):
-        self.balence=self.balence - amount
-        print("Rs" , amount , "from account no ", self.account_no , "was debited")
-        print("Total balence = " , self.get_bal())
+root=Tk()
+root.title("VIRUS DETECTOR")
+root.geometry('400x400')
 
-    def credit(self , amount):
-        self.balence=self.balence + amount
-        print("Rs" , amount , "from account no" , self.account_no , "was credited")
-        print("Total balence =" , self.get_bal())
+def msg():
+    messagebox.showwarning("ALERT","VIRUS DETECTED!")
 
-    def get_bal(self):
-        return self.balence
-    
-account1=amount(10000 , 12220)
-account1.debit(4000)
-account1.credit(3000)
+button=Button(root,text='SCAN FOR VIRUS',command=msg)
+button.place(x=40,y=70)
 
-
-    
-
+root.mainloop()

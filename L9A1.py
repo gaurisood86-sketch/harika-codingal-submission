@@ -1,20 +1,21 @@
-class nike:
-    def __init__ (self , type , model , price , color):
-        self.type=type
-        self.model=model
-        self.price=price
-        self.color=color
+from tkinter import *
 
-    def authentification(self):
-        print("This is a Nike Product ")
+window=Tk()
+window.title('EVENT HANDLER')
+window.geometry('400x400')
 
-    def details(self):
-        print(f"This is a {self.model} {self.type} and is {self.color} color . It's price is {self.price}")
+def handle_keypress(event):
+    print(event.char)
 
-nikeshoe=nike("AIR JORDANS" , "SHOE" , "BLACK" , "250$")
-niketshirt=nike("MARVELS" , "TSHIRT" , "BLUE" , "50$")
+window.bind("<Key>",handle_keypress)
 
-nikeshoe.authentification()
-nikeshoe.details()
-niketshirt.authentification()
-niketshirt.details()
+def handle_click(event):
+    print("\nthe key was clicked!")
+
+button=Button(text='click me!')
+button.pack()
+
+button.bind("<Button-1>",handle_click)
+
+window.mainloop()
+

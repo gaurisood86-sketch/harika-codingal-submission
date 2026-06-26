@@ -1,16 +1,16 @@
-my_tuple=()
-print(my_tuple)
+from tkinter import *
 
-my_tuple=(1,"hello",3.4)
-print(my_tuple)
+root=Tk()
+root.title('LOGIN APP')
+root.geometry('500x400')
 
-my_tuple=("hello",[1,2,3,4],[4,5,6,7])
-print(my_tuple)
+frame=Frame(master=root,width=200,height=300,bg='black')
 
-my_tuple=("h" , "e" , "l" , "l" , "o")
-print("first letter:" , my_tuple[0])
-print("fourth letter:" , my_tuple[4])
+label1=Label(frame,text='FULL NAME',bg='white',fg='blue',width=12)
+label2=Label(frame,text="EMAIL ID",bg='white',fg='blue',width=12)
+label3=Label(frame,text="ENTER PASSWORD",bg='white',fg='blue',width=12)
 
-n_tuple=("mouse" , [1,2,6,8] , [4,8,6,5])
-print(n_tuple[0][3])
-print(n_tuple[2][3])
+name_entry=Entry(frame)
+email_entry=Entry(frame)
+password_entry=Entry(frame,show='*')
+
