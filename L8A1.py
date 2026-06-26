@@ -1,16 +1,28 @@
-fruits=("apple" , "watermelon" , "strawberry" , "blueberry","kiwi" )
-print("fruits tuple:" , fruits)
+from tkinter import *
 
-print ("first fruit:" , fruits[0])
-print("second fruit:" , fruits[1])
+root=Tk()
+root.title("NUMBER PAD")
+root.geometry("500x300")
 
-print("last fruit:" , fruits[-1])
+nums=[[9,8,7],[6,5,4],[3,2,1],['#',0,'*']]
+
+for i in range(4):
+    root.columnconfigure(i,weight=1,minsize=75)
+    root.rowconfigure(i,weight=1,minsize=50)
+for i in range(4):
+    for j in range(3):
+        frame=Frame(
+            master=root,
+            relief=SUNKEN,
+            borderwidth=1,
+            bg='lightblue'
+        
+        )
+        frame.grid(row=i,column=j)
+        label=Label(master=frame,text=nums[i][j],bg='black')
+        label.pack(padx=3,pady=3)
+
+root.mainloop()
 
 
-print("first two fruits:" , fruits[0:2])
-
-for i in fruits:
-    print(i)
-
-print("apple count:" , fruits.count("apple"))
-print("index of kiwi:" , fruits.index("kiwi"))
+    
